@@ -1,0 +1,10 @@
+<% unless @topic.nil? %>
+  <p><%= @topic.name %> </p>
+  <ul>
+    <% @topic.evokes.each do |e| %>
+    <li><%= link_to e.stem, evoke_path(e), remote: true %></li>
+  <% end %>
+</ul>
+<% else %>
+    <p>Please select a topic</p>
+<%end %>
